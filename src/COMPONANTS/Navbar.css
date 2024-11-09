@@ -1,0 +1,96 @@
+/* Default styles for larger screens */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5.1rem;
+    padding: 1.5rem;
+    background-color: #862d2d;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-right: 20px; 
+}
+
+.img-logo {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hamburger styles */
+.hamburger {
+    display: none; /* Hidden by default for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+/* Styles when hamburger is clicked (for smaller screens) */
+.nav-links.open {
+    display: flex;
+    flex-direction: column; /* Stack the links vertically */
+    position: absolute;
+    top: 5.1rem;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Media query for smaller screens (<=768px) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically when shown */
+        background-color: #333;
+        position: absolute;
+        top: 5.1rem; /* Align menu just below the navbar */
+        right: 0;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-links.open {
+        display: flex; /* Show nav links when open */
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on smaller screens */
+    }
+}
+
+/* Media query for larger screens (>768px) */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex; /* Show nav links horizontally on large screens */
+        position: static;
+        background-color: transparent;
+        width: auto;
+        padding: 0;
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger on larger screens */
+    }
+}
